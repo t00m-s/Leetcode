@@ -10,7 +10,7 @@ struct TreeNode
 };
 
 class Solution {
-    public:
+public:
     TreeNode* invertTree(TreeNode* root)
     {
         TreeNode* r = root;

@@ -8,7 +8,7 @@ struct ListNode {
 };
 
 class Solution {
-    public:
+public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
     {
         if(!list1 and !list2)
@@ -21,20 +21,20 @@ class Solution {
             return list2;
 
         if(list1 and list2)
+        {
+            if(list1->val < list2->val)
             {
-                if(list1->val < list2->val)
-                    {
-                        auto node = new ListNode(list1->val);
-                        node->next = mergeTwoLists(list1->next, list2);
-                        return node;
-                    }
-                else
-                    {
-                        auto node = new ListNode(list2->val);
-                        node->next = mergeTwoLists(list1, list2->next);
-                        return node;
-                    }
+                auto node = new ListNode(list1->val);
+                node->next = mergeTwoLists(list1->next, list2);
+                return node;
             }
+            else
+            {
+                auto node = new ListNode(list2->val);
+                node->next = mergeTwoLists(list1, list2->next);
+                return node;
+            }
+        }
         return nullptr;
     }
 };

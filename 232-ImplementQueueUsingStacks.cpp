@@ -14,7 +14,7 @@ using namespace std;
 // you remove it from read stack and push it on write stack
 class MyQueue
 {
-    public:
+public:
     MyQueue()
     {
         stack<int> read;

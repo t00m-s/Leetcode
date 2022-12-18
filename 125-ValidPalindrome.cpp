@@ -2,7 +2,7 @@
 using namespace std;
 
 class Solution {
-    public:
+public:
     bool isPalindrome(string s)
     {
         // Rimuove tutti i caratteri non alfanumerici
@@ -10,10 +10,10 @@ class Solution {
                                []( auto const& c ) -> bool { return !std::isalnum(c); } ), s.end());
 
         for(int i = 0; i < s.size() / 2; ++i)
-            {
-                if(tolower(s[i]) != tolower(s[s.size() - i - 1]))
-                    return false;
-            }
+        {
+            if(tolower(s[i]) != tolower(s[s.size() - i - 1]))
+                return false;
+        }
 
         return true;
 
