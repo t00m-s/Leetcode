@@ -15,25 +15,27 @@ using namespace std;
 class MyQueue
 {
 public:
+    stack<int> mainStack;
+    stack<int> aux;
     MyQueue()
     {
-        stack<int> read;
-        stack<int> write;
     }
 
-    void push(int x) {
-        write.push(x);
+    void push(int x)
+    {
+        mainStack.push(x);
     }
 
     int pop() {
-
+        int x = mainStack.top();
+        return x;
     }
 
     int peek() {
-
+        return mainStack.top();
     }
 
     bool empty() {
-
+        return mainStack.empty();
     }
 };
